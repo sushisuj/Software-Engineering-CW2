@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Dashboard'),
       ),
       body: Center(
         child: Column(
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
-            const Text('This is a very basic home page.'),
+            const Text('View Nutrition Information and Meal Plans'),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
