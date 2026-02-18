@@ -39,7 +39,7 @@ class AppNavigation extends StatelessWidget {
         final showFullNav = constraints.maxWidth > 900;
         
         return Container(
-          height: 100,
+          height: 60,
           color: Colors.white,
           child: Column(
             children: [
@@ -71,23 +71,36 @@ class AppNavigation extends StatelessWidget {
                   ),
                   // Centered nav buttons
                   if (showFullNav)
-                    Expanded(
-                      child: Center(
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            _navTextButton(context, 'Home', () => Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false)),
-                            const SizedBox(width: 12),
-                            _navTextButton(context, 'holder', () => Navigator.pushNamed(context, '/holder')),
-                            const SizedBox(width: 12),
-                            _navTextButton(context, 'About', () => Navigator.pushNamed(context, '/holder')),
-                            
-                          ],
-                        ),
-                      ),
-                    )
+                     Expanded(
+                       child: Center(
+                         child: Row(
+                           mainAxisSize: MainAxisSize.min,
+                           children: [
+                             _navTextButton(context, 'Home', () => Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false)),
+                             const SizedBox(width: 12),
+                             _navTextButton(context, 'holder', () => Navigator.pushNamed(context, '/holder')),
+                             const SizedBox(width: 12),
+                             _navTextButton(context, 'About', () => Navigator.pushNamed(context, '/holder')),
+                             
+                           ],
+                         ),
+                       ),
+                     )
                   else
-                    const Spacer(),
+                    // show a compact popup menu on small screens
+                    PopupMenuButton<int>(
+                      icon: const Icon(Icons.menu, color: Colors.grey),
+                      onSelected: (value) {
+                        if (value == 0) Navigator.pushNamedAndRemoveUntil(context, '/', (r) => false);
+                        if (value == 1) Navigator.pushNamed(context, '/holder');
+                        if (value == 2) Navigator.pushNamed(context, '/holder');
+                      },
+                      itemBuilder: (_) => const [
+                        PopupMenuItem(value: 0, child: Text('Home')),
+                        PopupMenuItem(value: 1, child: Text('Holder')),
+                        PopupMenuItem(value: 2, child: Text('About')),
+                      ],
+                    ),
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 600),
                     child: Row(
