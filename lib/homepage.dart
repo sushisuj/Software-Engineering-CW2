@@ -19,15 +19,17 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
-            const Text('View Nutrition Information and Meal Plans'),
+            const Text('Hello! This is the dashboard.'),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Hello from HomePage!')),
+                  const SnackBar(
+                      content:
+                          Text('Here you can view nutrition information and meal plans!')),
                 );
               },
-              child: const Text('Say Hello'),
+              child: const Text('View Nutrition Information and Meal Plans'),
             ),
           ],
         ),
