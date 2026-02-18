@@ -9,10 +9,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Frontend',
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      home: LoginPage(),
     );
   }
 }
@@ -38,6 +38,8 @@ class LoginPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
+                        // ignore: duplicate_ignore
+                        // ignore: deprecated_member_use
                         color: Colors.black.withOpacity(0.05),
                         blurRadius: 24,
                         offset: const Offset(0, 12),
@@ -56,7 +58,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 8),
-                      Center(
+                      const Center(
                         child: Text(
                           'Simply Serve',
                           style: TextStyle(
@@ -140,6 +142,7 @@ class LoginPage extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Divider(
+                              // ignore: deprecated_member_use
                               color: Colors.grey.withOpacity(0.4),
                             ),
                           ),
@@ -152,6 +155,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           Expanded(
                             child: Divider(
+                              // ignore: deprecated_member_use
                               color: Colors.grey.withOpacity(0.4),
                             ),
                           ),
