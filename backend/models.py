@@ -34,6 +34,20 @@ class Preference(Base):
     preference_name = Column(String)
     like = Column(Integer)
 
+class Recipe(Base):
+    __tablename__ = "Recipe"
+    recipe_id = Column(Integer, primary_key=True, index=True)
+    complexity_id = Column(Integer, foreign_key("complexity_id"), primary_key=True)
+    recipe_name = Column(String)
+    cuisine = Column(String)
+    prep_time = Column(Integer)
+    cost_estimate = Column(Real)
+    calories = Column(Integer)
+    protien = Column(Integer)
+    carbs = Column(Integer)
+    fat = Column(Integer)
+    
+    
 
 class ShoppingListIngredient(Base):
     __tablename__ = "shopping_list_ingredient"
