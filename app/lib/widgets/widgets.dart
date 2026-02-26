@@ -11,14 +11,14 @@ class AppNavigation extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         // changed WidgetStateProperty -> MaterialStateProperty
-        padding: MaterialStateProperty.all(
+        padding: WidgetStateProperty.all(
           const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         ),
-        foregroundColor: MaterialStateProperty.all(Colors.grey[800]),
-        textStyle: MaterialStateProperty.resolveWith<TextStyle?>(
+        foregroundColor: WidgetStateProperty.all(Colors.grey[800]),
+        textStyle: WidgetStateProperty.resolveWith<TextStyle?>(
           (states) {
             // changed WidgetState -> MaterialState
-            final hovered = states.contains(MaterialState.hovered);
+            final hovered = states.contains(WidgetState.hovered);
             return TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
